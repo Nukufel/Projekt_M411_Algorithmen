@@ -1,3 +1,7 @@
+/**
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ */
 public class QuickSortPleft {
     int[] array=new int[2];
 
@@ -9,9 +13,9 @@ public class QuickSortPleft {
     public void quickSort1(int leftEnd, int rightEnd){
         if (leftEnd>=rightEnd)
             return;
-
-        int middle=array[leftEnd];
-        int counter1=leftEnd+1;
+        int middleIndex=leftEnd+(int)(Math.random()*(rightEnd-leftEnd));
+        int middle=array[middleIndex];
+        int counter1=leftEnd;
         int counter2=rightEnd;
         while (counter1<=counter2){
             if (middle<array[counter1]){
@@ -26,18 +30,6 @@ public class QuickSortPleft {
             }
             counter1++;
         }
-
-        //get Middle Index
-        int middleIndex=0;
-        int counter3=leftEnd;
-        while (true){
-            if (array[counter3]>middle){
-                middleIndex=counter3-1;
-                break;
-            }
-            counter3++;
-        }
-        changePos(leftEnd,middleIndex);
 
         quickSort1(leftEnd, middleIndex-1);
         quickSort1(middleIndex+1, rightEnd);
