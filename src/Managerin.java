@@ -9,8 +9,8 @@ public class Managerin{
     private SorterInterface[] sortingClasses = {(SorterInterface) new QuickSortPrandom(), (SorterInterface) new BinaryTreeSort(), (SorterInterface)new HeapSort(),(SorterInterface) new InsertionSort(), (SorterInterface) new MergeSort(), (SorterInterface) new QuickSortPleft(), (SorterInterface) new ShakerSort()};
     private String [] sorts = {"QuickSortPrandom", "BinaryTreeSort", "HeapSort", "InsertionSort", "MergeSort", "QuickSortPleft", "ShakerSort"};
     private String[] arrayNames = {"InversTeilsortiert1000", "InversTeilsortiert10000","InversTeilsortiert100000","Random1000","Random10000","Random100000","Teilsortiert1000","Teilsortiert10000","Teilsortiert100000"};
-    public Managerin(){
 
+    public Managerin(){
     }
 
     public void getFileformFile() throws IOException {
@@ -21,7 +21,9 @@ public class Managerin{
     }
 
     public int[] readInToArray(BufferedReader reader) throws IOException {
+
         int[] intArray = new int[(int)reader.lines().count()];
+
         for (int j = 0; j<reader.lines().count(); j++){
             intArray[j] = Integer.parseInt(reader.readLine());
         }
@@ -29,6 +31,7 @@ public class Managerin{
     }
 
     public void sortingArrays() {
+
         for (int i = 0; i<sortingClasses.length; i++){
             for (int[] dasArray: datenArrays) {
                 sortingClasses[i].sort(dasArray);
@@ -38,7 +41,9 @@ public class Managerin{
         }
     }
 
-    public void writeInToFile(){
+    public void writeInToFile() throws IOException {
+        FileWriter writer;
+        File endFile = new File("endFile.txt");
         String intoCSV = "";
 
         for (int i = 0; i<7; i++){
@@ -49,6 +54,10 @@ public class Managerin{
             }
         }
 
+        writer = new FileWriter(endFile, false);
+        writer.write(intoCSV);
+        writer.flush();
+        writer.close();
 
     }
 }
