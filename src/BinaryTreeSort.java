@@ -19,7 +19,7 @@ public class BinaryTreeSort extends SortAttributes{
     @Override
     public void sort(int[] zahlen) {
         resetAttributes();
-
+        index=0;
         long start = System.currentTimeMillis();
 
         array=zahlen;
@@ -40,7 +40,7 @@ public class BinaryTreeSort extends SortAttributes{
             zahlEintragen(array[i], mainKnoten);
             anzVergleiche++;
         }
-        anzVergleiche+= array.length;
+        anzVergleiche+=array.length;
         speicherbedarf+=32;
     }
     private void zahlEintragen(int zahl, Knoten knoten){
