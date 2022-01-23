@@ -13,7 +13,7 @@ public interface SorterInterface {
 
     /**
      * Das sortierte Array wird zurück gegeben.
-     * @return das Array das sortiert worden ist
+     * @return das Array sortiert
      */
     public int[] getSortedArray();
 
