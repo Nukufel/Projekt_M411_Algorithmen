@@ -32,7 +32,6 @@ public class BinaryTreeSort extends SortAttributes{
 
     private void binaryTreeSort(){
         Knoten mainKnoten = new Knoten(array[0]);
-        speicherbedarf+=32;
         zahlenEintragen(mainKnoten);
         zahlenAuslesen(mainKnoten);
     }
@@ -64,7 +63,7 @@ public class BinaryTreeSort extends SortAttributes{
         }
         anzahlSchreibzugriffe++;
         anzVergleiche+=2;
-        speicherbedarf+=2*32;
+        speicherbedarf+=32;
     }
 
     private void zahlenAuslesen(Knoten knoten){
