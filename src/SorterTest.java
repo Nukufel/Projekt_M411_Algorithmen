@@ -15,9 +15,9 @@ public class SorterTest {
     @Before
     public void initialize(){
         Random random = new Random(); // creating Random object
-        arrayUnsorted = new int[100000];
+        arrayUnsorted = new int[1000000];
         for (int i = 0; i < arrayUnsorted.length; i++) {
-            arrayUnsorted[i] = (int) (Math.random()*10000);
+            arrayUnsorted[i] = (int) (Math.random()*100000000);
         }
         arraySorted=arrayUnsorted.clone();
 
@@ -78,16 +78,17 @@ public class SorterTest {
 
         sorter[0] = new BinaryTreeSort();
         sorter[1]=new HeapSort();
-        sorter[2]=new InsertionSort();
         sorter[3]=new MergeSort();
         sorter[4]=new QuickSortFirstPivot();
         sorter[5]=new QuickSortRandomPivot();
+        sorter[2]=new InsertionSort();
         sorter[6]=new ShakerSort();
         for (SorterInterface sorterIf:sorter) {
             initialize();
             try {
                 sorterIf.sort(arrayUnsorted);
                 assertArrayEquals(arrayUnsorted,arraySorted);
+                System.out.print("\t"+sorterIf.getTime());
                 System.out.println(sorterIf.getClass()+"\t\tWorked");
             }catch (Exception e){
                 System.out.println(sorterIf.getClass()+"\t\tdidn't Worked");

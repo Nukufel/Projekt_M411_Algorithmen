@@ -21,7 +21,7 @@ public interface SorterInterface {
      * Der gebrauchten Speicherbedarf wird zurück gegeben.
      * @return den gebrauchten Speicherbedarf zum sortieren
      */
-    public int getSpeicherbedarf();
+    public long getSpeicherbedarf();
 
     /**
      * Die gebrauchte Zeit wird zurück gegeben
@@ -33,11 +33,11 @@ public interface SorterInterface {
      * Die Anzahl vergleiche werden zurück gegeben
      * @return die Anzahl von Vergleiche zum sortieren
      */
-    public int anzVergleiche();
+    public long anzVergleiche();
 
     /**
      * Die Anzahl von Schreibzugriffen werden zurück gegeben
      * @return die Anzahl von Schreibzugriffen zum sortieren
      */
-    public int anzahlSchreibzugriffe();
+    public long anzahlSchreibzugriffe();
 }

@@ -6,10 +6,10 @@
  */
 public abstract class SortAttributes implements SorterInterface{
     protected int[] array;
-    protected int speicherbedarf;
+    protected long speicherbedarf;
     protected long time;
-    protected int anzVergleiche;
-    protected int anzahlSchreibzugriffe;
+    protected long anzVergleiche;
+    protected long anzahlSchreibzugriffe;
 
     /**
      * Das sortierte Array wird zurück gegeben.
@@ -25,7 +25,7 @@ public abstract class SortAttributes implements SorterInterface{
      * @return den gebrauchten Speicherbedarf zum sortieren
      */
     @Override
-    public int getSpeicherbedarf() {
+    public long getSpeicherbedarf() {
         return speicherbedarf;
     }
 
@@ -43,7 +43,7 @@ public abstract class SortAttributes implements SorterInterface{
      * @return die Anzahl von Vergleiche zum sortieren
      */
     @Override
-    public int anzVergleiche() {
+    public long anzVergleiche() {
         return anzVergleiche;
     }
 
@@ -52,7 +52,7 @@ public abstract class SortAttributes implements SorterInterface{
      * @return die Anzahl von Schreibzugriffen zum sortieren
      */
     @Override
-    public int anzahlSchreibzugriffe() {
+    public long anzahlSchreibzugriffe() {
         return anzahlSchreibzugriffe;
     }
 
