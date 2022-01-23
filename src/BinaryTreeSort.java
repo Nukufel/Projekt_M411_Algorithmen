@@ -12,7 +12,7 @@ public class BinaryTreeSort extends SortAttributes{
 
         private Knoten(int wert) {
             this.wert = wert;
-            speicherbedarf+=2*32;
+            speicherbedarf+=32;
         }
     }
 
