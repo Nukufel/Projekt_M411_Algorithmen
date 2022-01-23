@@ -1,5 +1,5 @@
 /**
- * Das ist das Interface, welhe jede Sort Klasse hat.
+ * Das ist das Interface, welche jede Sort Klasse hat.
  * @author Niklas Vogel
  * @version 1.0
  * @since 12.01.2022
