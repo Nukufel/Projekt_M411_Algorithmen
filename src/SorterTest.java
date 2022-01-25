@@ -1,9 +1,11 @@
 import org.junit.Before;
 import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Random;
 
 import static org.junit.Assert.*;
+
 /**
  * @author Vivek Viruthiyel
  * @version 1.0
@@ -12,86 +14,88 @@ import static org.junit.Assert.*;
 public class SorterTest {
     int[] arrayUnsorted;
     int[] arraySorted;
+
     @Before
-    public void initialize(){
+    public void initialize() {
         Random random = new Random(); // creating Random object
         arrayUnsorted = new int[1000000];
         for (int i = 0; i < arrayUnsorted.length; i++) {
-            arrayUnsorted[i] = (int) (Math.random()*100000000);
+            arrayUnsorted[i] = (int) (Math.random() * 100000000);
         }
-        arraySorted=arrayUnsorted.clone();
+        arraySorted = arrayUnsorted.clone();
 
         Arrays.sort(arraySorted);
     }
+
     @Test
-    public void binaryTreeSort(){
-        BinaryTreeSort sorter=new BinaryTreeSort();
+    public void binaryTreeSort() {
+        BinaryTreeSort sorter = new BinaryTreeSort();
         sorter.sort(arrayUnsorted);
-        assertArrayEquals(arrayUnsorted,arraySorted);
+        assertArrayEquals(arrayUnsorted, arraySorted);
     }
 
     @Test
-    public void heapSort(){
-        HeapSort sorter=new HeapSort();
+    public void heapSort() {
+        HeapSort sorter = new HeapSort();
         sorter.sort(arrayUnsorted);
-        assertArrayEquals(arrayUnsorted,arraySorted);
+        assertArrayEquals(arrayUnsorted, arraySorted);
     }
 
     @Test
-    public void insertionSort(){
-        InsertionSort sorter=new InsertionSort();
+    public void insertionSort() {
+        InsertionSort sorter = new InsertionSort();
         sorter.sort(arrayUnsorted);
-        assertArrayEquals(arrayUnsorted,arraySorted);
+        assertArrayEquals(arrayUnsorted, arraySorted);
     }
 
     @Test
-    public void mergeSort(){
-        MergeSort sorter=new MergeSort();
+    public void mergeSort() {
+        MergeSort sorter = new MergeSort();
         sorter.sort(arrayUnsorted);
-        assertArrayEquals(arrayUnsorted,arraySorted);
+        assertArrayEquals(arrayUnsorted, arraySorted);
     }
 
     @Test
-    public void quickSortFirstPivot(){
-        QuickSortFirstPivot sorter=new QuickSortFirstPivot();
+    public void quickSortFirstPivot() {
+        QuickSortFirstPivot sorter = new QuickSortFirstPivot();
         sorter.sort(arrayUnsorted);
-        assertArrayEquals(arrayUnsorted,arraySorted);
+        assertArrayEquals(arrayUnsorted, arraySorted);
     }
 
     @Test
-    public void quickSortRandomPivot(){
-        QuickSortRandomPivot sorter=new QuickSortRandomPivot();
+    public void quickSortRandomPivot() {
+        QuickSortRandomPivot sorter = new QuickSortRandomPivot();
         sorter.sort(arrayUnsorted);
-        assertArrayEquals(arrayUnsorted,arraySorted);
+        assertArrayEquals(arrayUnsorted, arraySorted);
     }
 
     @Test
-    public void shakerSort(){
-        ShakerSort sorter=new ShakerSort();
+    public void shakerSort() {
+        ShakerSort sorter = new ShakerSort();
         sorter.sort(arrayUnsorted);
-        assertArrayEquals(arrayUnsorted,arraySorted);
+        assertArrayEquals(arrayUnsorted, arraySorted);
     }
 
     @Test
-    public void all(){
-        SorterInterface[] sorter=new SorterInterface[7];
+    public void all() {
+        SorterInterface[] sorter = new SorterInterface[7];
 
         sorter[0] = new BinaryTreeSort();
-        sorter[1]=new HeapSort();
-        sorter[3]=new MergeSort();
-        sorter[4]=new QuickSortFirstPivot();
-        sorter[5]=new QuickSortRandomPivot();
-        sorter[2]=new InsertionSort();
-        sorter[6]=new ShakerSort();
-        for (SorterInterface sorterIf:sorter) {
+        sorter[1] = new HeapSort();
+        sorter[3] = new MergeSort();
+        sorter[4] = new QuickSortFirstPivot();
+        sorter[5] = new QuickSortRandomPivot();
+        sorter[2] = new InsertionSort();
+        sorter[6] = new ShakerSort();
+        for (SorterInterface sorterIf : sorter) {
             initialize();
             try {
                 sorterIf.sort(arrayUnsorted);
-                assertArrayEquals(arrayUnsorted,arraySorted);
-                System.out.print("\t"+sorterIf.getTime());
-                System.out.println(sorterIf.getClass()+"\t\tWorked");
-            }catch (Exception e){
-                System.out.println(sorterIf.getClass()+"\t\tdidn't Worked");
+                assertArrayEquals(arrayUnsorted, arraySorted);
+                System.out.print("\t" + sorterIf.getTime());
+                System.out.println(sorterIf.getClass() + "\t\tWorked");
+            } catch (Exception e) {
+                System.out.println(sorterIf.getClass() + "\t\tdidn't Worked");
             }
         }
     }

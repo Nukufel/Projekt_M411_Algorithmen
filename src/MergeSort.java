@@ -3,7 +3,7 @@
  * @version 1.0
  * @since 13.01.2022
  */
-public class MergeSort extends SortAttributes{
+public class MergeSort extends SortAttributes {
 
     @Override
     public void sort(int[] zahlen) {
@@ -12,13 +12,13 @@ public class MergeSort extends SortAttributes{
 
         long start = System.currentTimeMillis();
 
-        array=zahlen;
-        mergeSort(zahlen,zahlen.length);
+        array = zahlen;
+        mergeSort(zahlen, zahlen.length);
 
         long end = System.currentTimeMillis();
 
-        speicherbedarf+=array.length*32;
-        time=end-start;
+        speicherbedarf += array.length * 32;
+        time = end - start;
     }
 
     public void mergeSort(int[] array, int length) {
@@ -32,9 +32,9 @@ public class MergeSort extends SortAttributes{
         int middle = length / 2;
         int[] leftArray = new int[middle];
         int[] rightArray = new int[length - middle];
-        speicherbedarf +=(array.length+1)*32;
+        speicherbedarf += (array.length + 1) * 32;
 
-        anzahlSchreibzugriffe+=2;
+        anzahlSchreibzugriffe += 2;
 
         for (int i = 0; i < middle; i++) {
             leftArray[i] = array[i];
@@ -59,19 +59,18 @@ public class MergeSort extends SortAttributes{
 
 
         int i = 0, j = 0, k = 0;
-        speicherbedarf +=5*32;
+        speicherbedarf += 5 * 32;
 
 
         while (i < left && j < right) {
             if (leftArray[i] <= rightArray[j]) {
                 array[k++] = leftArray[i++];
-            }
-            else {
+            } else {
                 array[k++] = rightArray[j++];
             }
 
             anzahlSchreibzugriffe++;
-            anzVergleiche+=2;
+            anzVergleiche += 2;
         }
 
         anzVergleiche++;
