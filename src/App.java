@@ -7,15 +7,13 @@
  * Then the data is sorted with each sort algorithm and
  * the sort time, number of writes, number of comparisons and the memory space
  * afterwards is written into a VSC file.
- *
- * @
  */
 
 import java.io.*;
 import java.util.Vector;
 
 
-public class Managerin {
+public class App {
     /**
      * The data from the files will be written in to the array
      */
@@ -41,7 +39,7 @@ public class Managerin {
     /**
      * Sort algorithem names are stored into an array
      */
-    private String[] sorts = {"HeapSort", "InsertionSort", "MergeSort", "QuickSortLeftPivot", "QuickSortRandomPivot", "ShakerSort", "BinaryTreeSort"};
+    private String[] sorts = {"HeapSort", "InsertionSort", "MergeSort", "QuickSortFirstPivot", "QuickSortRandomPivot", "ShakerSort", "BinaryTreeSort"};
 
     /**
      * File names are stored into an array
@@ -102,7 +100,7 @@ public class Managerin {
     }
 
     /**
-     * The data is formatted and written from the array of the vector into a VSC file.
+     * The data is formatted and written from the array of the vector into a CSV file.
      *
      * @throws IOException
      */
@@ -115,7 +113,7 @@ public class Managerin {
             intoCSV += "\n" + sorts[i] + "\n";
             intoCSV += ",Schreibzugriffe,Vergleiche,Speicherbedarf,Time\n";
             for (int n = 0; n < 9; n++) {
-                intoCSV += arrayNames[n] + "," + sortedArrays.get((i * 7) + n)[1] + "," + sortedArrays.get((i * 7) + n)[2] + "," + sortedArrays.get((i * 7) + n)[3] + "," + sortedArrays.get((i * 7) + n)[4] + "\n";
+                      intoCSV += arrayNames[n] + "," + sortedArrays.get((i * 9) + n)[1] + "," + sortedArrays.get((i * 9) + n)[2] + "," + sortedArrays.get((i * 9) + n)[3] + "," + sortedArrays.get((i * 9) + n)[4] + "\n";
             }
         }
 
@@ -128,7 +126,7 @@ public class Managerin {
     }
 
     public static void main(String[] args) throws IOException {
-        Managerin managerin = new Managerin();
+        App managerin = new App();
         managerin.getFileformFile();
         managerin.sortingArrays();
         managerin.writeInToFile();
