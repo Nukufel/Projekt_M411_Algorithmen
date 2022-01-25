@@ -1,6 +1,5 @@
 /**
  * Das ist das Interface, welche jede Sort Klasse hat.
- *
  * @author Niklas Vogel
  * @version 1.0
  * @since 12.01.2022
@@ -8,7 +7,6 @@
 public interface SorterInterface {
     /**
      * Das Array wird Sortiert
-     *
      * @param zahlen das Array das Sortiert werden sollte
      */
     public void sort(int[] zahlen);

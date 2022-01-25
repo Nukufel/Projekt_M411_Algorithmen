@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 /**
  * @author Vivek Viruthiyel
  * @version 1.0
- * @since 13.01.2022
+ * @since 18.01.2022
  */
 public class SorterTest {
     int[] arrayUnsorted;
@@ -18,7 +18,7 @@ public class SorterTest {
     @Before
     public void initialize() {
         Random random = new Random(); // creating Random object
-        arrayUnsorted = new int[1000000];
+        arrayUnsorted = new int[100000];
         for (int i = 0; i < arrayUnsorted.length; i++) {
             arrayUnsorted[i] = (int) (Math.random() * 100000000);
         }
@@ -92,7 +92,6 @@ public class SorterTest {
             try {
                 sorterIf.sort(arrayUnsorted);
                 assertArrayEquals(arrayUnsorted, arraySorted);
-                System.out.print("\t" + sorterIf.getTime());
                 System.out.println(sorterIf.getClass() + "\t\tWorked");
             } catch (Exception e) {
                 System.out.println(sorterIf.getClass() + "\t\tdidn't Worked");
