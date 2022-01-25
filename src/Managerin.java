@@ -3,6 +3,12 @@
  * @version 1.1
  * @since 13.01.2022
  *
+ * In this class data is read from documents and written into an array.
+ * Then the data is sorted with each sort algorithm and
+ * the sort time, number of writes, number of comparisons and the memory space
+ * afterwards is written into a VSC file.
+ *
+ * @
  */
 
 import java.io.*;
@@ -10,16 +16,41 @@ import java.util.Vector;
 
 
 public class Managerin {
+    /**
+     * The data from the files will be written in to the array
+     */
     private Vector<int[]> datenArrays = new Vector<>();
+
+    /**
+     *  In this vector an array is created for each algorithm,
+     *  in which the sort time, the number of writes,
+     *  the number of comparisons and the storage space will be inside
+     */
     private Vector<Object[]> sortedArrays = new Vector<>();
 
+    /**
+     * All file pathes are written in the array
+     */
     private String[] dateiEndungen = new File(new File("").getAbsolutePath() + "/Testdaten").list();
+
+    /**
+     * Classes are generated and stored in to an array
+     */
     private SorterInterface[] sortingClasses = {new HeapSort(), new InsertionSort(), new MergeSort(), new QuickSortFirstPivot(), new QuickSortRandomPivot(), new ShakerSort(), new BinaryTreeSort()};
+
+    /**
+     * Sort algorithem names are stored into an array
+     */
     private String[] sorts = {"HeapSort", "InsertionSort", "MergeSort", "QuickSortLeftPivot", "QuickSortRandomPivot", "ShakerSort", "BinaryTreeSort"};
+
+    /**
+     * File names are stored into an array
+     */
     private String[] arrayNames = {"InversTeilsortiert1000", "InversTeilsortiert10000", "InversTeilsortiert100000", "Random1000", "Random10000", "Random100000", "Teilsortiert1000", "Teilsortiert10000", "Teilsortiert100000"};
 
     /**
-     *Creates a BufferedReader "reader" to read the file paths and a second "reader2" to read the file length.
+     * Creates a BufferedReader "reader" to read the file paths and a second "reader2" to read the file length.
+     *
      * @throws IOException
      */
     public void getFileformFile() throws IOException {
@@ -32,6 +63,14 @@ public class Managerin {
         }
     }
 
+    /**
+     * The reader reads the numbers from the file and stores them in an array.
+     *
+     * @param reader
+     * @param reader2
+     * @return Array filled with the numbers from the file.
+     * @throws IOException
+     */
     public int[] readInToArray(BufferedReader reader, BufferedReader reader2) throws IOException {
         int lines = (int) reader2.lines().count();
 
@@ -45,6 +84,12 @@ public class Managerin {
         return intArray;
     }
 
+    /**
+     * The sorting algorithms are called and the name,
+     * the number of writes, the number of compares,
+     * the memory requirements and the sorting time are
+     * written into an array that is put into a vector via method calls.
+     */
     public void sortingArrays() {
 
         for (int i = 0; i < sortingClasses.length; i++) {
@@ -56,6 +101,11 @@ public class Managerin {
         }
     }
 
+    /**
+     * The data is formatted and written from the array of the vector into a VSC file.
+     *
+     * @throws IOException
+     */
     public void writeInToFile() throws IOException {
         FileWriter writer;
         File endFile = new File("endFile.txt");
