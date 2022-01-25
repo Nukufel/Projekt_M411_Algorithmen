@@ -52,7 +52,7 @@ public class BinaryTreeSort extends SortAttributes{
     }
 
     /**
-     * Hier werden alle Teil-programme des Algorithmus ausgeführt.
+     * Hier werden alle Teilprogramme des Algorithmus ausgeführt.
      */
     private void binaryTreeSort(){
         Knoten mainKnoten = new Knoten(array[0]);

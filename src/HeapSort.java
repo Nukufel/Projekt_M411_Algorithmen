@@ -1,4 +1,9 @@
 /**
+ * Das Array wird in einer Baum Datenstruktur abgespeichert. Diese hat die Regel, das der obere Knotenpunkt immer
+ * grösser ist als der untere. Der Oberste Wert wird dann an der hintersten Stelle des Arrays gesetz. Dann wird wieder
+ * die Regek der Datenstruktur, die nur zum leicht verändert worden ist, wieder hergestellt. Dieser vorgang wird
+ * immer wieder holt bis alle Werte des Arrays ausgefüllt werden.
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
@@ -20,7 +25,9 @@ public class HeapSort extends SortAttributes {
         speicherbedarf += array.length * 32;
     }
 
-
+    /**
+     * Hier werden alle Teilprogramme des Algorithmus ausgeführt.
+     */
     private void heapSort() {
         BuildMaxHeap();
         // Sortierung:
@@ -33,7 +40,10 @@ public class HeapSort extends SortAttributes {
 
     }
 
-    // Erstelle im Array einen MaxHeap Baum
+    /**
+     * Hier werden alle Werte des Arrays in die Datenstruktur hinzugefügt und so sortiert, das die Regel
+     * eingehalten werden.
+     */
     private void BuildMaxHeap() {
         for (int i = (array.length / 2) - 1; i >= 0; i--) {
             versickern(i, array.length);
@@ -42,11 +52,15 @@ public class HeapSort extends SortAttributes {
         speicherbedarf += 32;
     }
 
-    // Versickern – Downheap
+    /**
+     * Hier wird geschaut ob die Regeln der Datenstruktur noch gelten und falls nicht dann wird dies korriegirt.
+     * Dannach wird die höchste Zahl nach rechts verschoben
+     * @param i tiefste Zahl
+     * @param j oberste Zahl
+     */
     private void versickern(int i, int j) {
         speicherbedarf += 32 * 2;
         while (i <= (j / 2) - 1) {
-
             // linkes Kind
             int kindIndex = ((i + 1) * 2) - 1;
             // rechtes Kind
