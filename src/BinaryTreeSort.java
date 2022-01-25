@@ -18,9 +18,19 @@ public class BinaryTreeSort extends SortAttributes{
      * Das ist die Klasse, in der die Daten des Arrays gespeichert werden
      */
     private class Knoten{
+        /**
+         * Der Wert des Knotens
+         */
         int wert;
+        /**
+         * Der linke und rechte Unterknoten
+         */
         Knoten linkerKnoten,rechterKnoten;
 
+        /**
+         * Das ist der Konstruktor des Knoten
+         * @param wert Der wert des Knoten
+         */
         private Knoten(int wert) {
             this.wert = wert;
             speicherbedarf+=32;
