@@ -26,7 +26,7 @@ public class BinaryTreeSort extends SortAttributes {
         binaryTreeSort();
 
         long end = System.currentTimeMillis();
-        time = start - end;
+        time = end - start;
         speicherbedarf += (array.length + 1) * 32;
     }
 
