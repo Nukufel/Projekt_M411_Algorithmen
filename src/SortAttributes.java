@@ -1,10 +1,11 @@
 /**
  * Das ist eine Vorlage für alle anderen Sort Klassen
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 12.01.2022
  */
-public abstract class SortAttributes implements SorterInterface{
+public abstract class SortAttributes implements SorterInterface {
     protected int[] array;
     protected long speicherbedarf;
     protected long time;
@@ -13,6 +14,7 @@ public abstract class SortAttributes implements SorterInterface{
 
     /**
      * Das sortierte Array wird zurück gegeben.
+     *
      * @return das Array das sortiert worden ist
      */
     @Override
@@ -22,6 +24,7 @@ public abstract class SortAttributes implements SorterInterface{
 
     /**
      * Der gebrauchten Speicherbedarf wird zurück gegeben.
+     *
      * @return den gebrauchten Speicherbedarf zum sortieren
      */
     @Override
@@ -31,6 +34,7 @@ public abstract class SortAttributes implements SorterInterface{
 
     /**
      * Die gebrauchte Zeit wird zurück gegeben
+     *
      * @return die gebrauchte Zeit zum sortieren
      */
     @Override
@@ -40,6 +44,7 @@ public abstract class SortAttributes implements SorterInterface{
 
     /**
      * Die Anzahl vergleiche werden zurück gegeben
+     *
      * @return die Anzahl von Vergleiche zum sortieren
      */
     @Override
@@ -49,6 +54,7 @@ public abstract class SortAttributes implements SorterInterface{
 
     /**
      * Die Anzahl von Schreibzugriffen werden zurück gegeben
+     *
      * @return die Anzahl von Schreibzugriffen zum sortieren
      */
     @Override
@@ -59,11 +65,11 @@ public abstract class SortAttributes implements SorterInterface{
     /**
      * setz alle Werte eines SortAttributes Objekts zurück bevor dem Starten der Sortierung
      */
-    protected void resetAttributes(){
-        array=null;
-        speicherbedarf=0;
-        time=0;
-        anzVergleiche=0;
-        anzahlSchreibzugriffe=0;
+    protected void resetAttributes() {
+        array = null;
+        speicherbedarf = 0;
+        time = 0;
+        anzVergleiche = 0;
+        anzahlSchreibzugriffe = 0;
     }
 }

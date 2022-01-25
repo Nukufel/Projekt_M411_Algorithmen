@@ -3,83 +3,85 @@
  * @version 1.0
  * @since 13.01.2022
  */
-public class BinaryTreeSort extends SortAttributes{
+public class BinaryTreeSort extends SortAttributes {
     private int index;
 
-    private class Knoten{
+    private class Knoten {
         int wert;
-        Knoten linkerKnoten,rechterKnoten;
+        Knoten linkerKnoten, rechterKnoten;
 
         private Knoten(int wert) {
             this.wert = wert;
-            speicherbedarf+=32;
+            speicherbedarf += 32;
         }
     }
 
     @Override
     public void sort(int[] zahlen) {
         resetAttributes();
-        index=0;
+        index = 0;
         long start = System.currentTimeMillis();
 
-        array=zahlen;
+        array = zahlen;
         binaryTreeSort();
 
         long end = System.currentTimeMillis();
-        time=start-end;
-        speicherbedarf+=(array.length+1)*32;
+        time = start - end;
+        speicherbedarf += (array.length + 1) * 32;
     }
 
-    private void binaryTreeSort(){
+    private void binaryTreeSort() {
         Knoten mainKnoten = new Knoten(array[0]);
         zahlenEintragen(mainKnoten);
         zahlenAuslesen(mainKnoten);
     }
-    private void zahlenEintragen(Knoten mainKnoten){
+
+    private void zahlenEintragen(Knoten mainKnoten) {
         for (int i = 1; i < array.length; i++) {
             zahlEintragen(array[i], mainKnoten);
             anzVergleiche++;
         }
-        anzVergleiche+=array.length;
-        speicherbedarf+=32;
+        anzVergleiche += array.length;
+        speicherbedarf += 32;
     }
-    private void zahlEintragen(int zahl, Knoten knoten){
-        if (zahl<knoten.wert){
 
-            if (knoten.linkerKnoten==null){
-                knoten.linkerKnoten=new Knoten(zahl);
-            }else{
-                zahlEintragen(zahl,knoten.linkerKnoten);
+    private void zahlEintragen(int zahl, Knoten knoten) {
+        if (zahl < knoten.wert) {
+
+            if (knoten.linkerKnoten == null) {
+                knoten.linkerKnoten = new Knoten(zahl);
+            } else {
+                zahlEintragen(zahl, knoten.linkerKnoten);
             }
 
-        }else{
+        } else {
 
-            if (knoten.rechterKnoten==null){
-                knoten.rechterKnoten=new Knoten(zahl);
-            }else{
-                zahlEintragen(zahl,knoten.rechterKnoten);
+            if (knoten.rechterKnoten == null) {
+                knoten.rechterKnoten = new Knoten(zahl);
+            } else {
+                zahlEintragen(zahl, knoten.rechterKnoten);
             }
 
         }
         anzahlSchreibzugriffe++;
-        anzVergleiche+=2;
-        speicherbedarf+=32;
+        anzVergleiche += 2;
+        speicherbedarf += 32;
     }
 
-    private void zahlenAuslesen(Knoten knoten){
-        if (knoten.linkerKnoten!=null){
+    private void zahlenAuslesen(Knoten knoten) {
+        if (knoten.linkerKnoten != null) {
             zahlenAuslesen(knoten.linkerKnoten);
         }
 
-        array[index]= knoten.wert;
+        array[index] = knoten.wert;
         index++;
 
         anzahlSchreibzugriffe++;
 
-        if (knoten.rechterKnoten!=null){
+        if (knoten.rechterKnoten != null) {
             zahlenAuslesen(knoten.rechterKnoten);
         }
-        anzVergleiche+=2;
+        anzVergleiche += 2;
     }
 
 }
