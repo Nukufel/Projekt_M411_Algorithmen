@@ -1,4 +1,6 @@
 /**
+ * Beim Merge Sort teilt man das Array in soviele Stellen auf wie möglich.
+ * Diese werden dann Stück für Stück wieder zusammen gefügt. Beim zusammenfügen werden die einzelnen teile wieder sortiert.
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
@@ -13,7 +15,7 @@ public class MergeSort extends SortAttributes {
         long start = System.currentTimeMillis();
 
         array = zahlen;
-        mergeSort(zahlen, zahlen.length);
+        mergeSort(array,array.length);
 
         long end = System.currentTimeMillis();
 
@@ -21,6 +23,12 @@ public class MergeSort extends SortAttributes {
         time = end - start;
     }
 
+    /**
+     * Das ist der Algorithmus. Hier wird das Array in vielen kleineren Arrays gespeichert.
+     * Zum schluss dieser Methode werden diese kleineren Arrays zusammengefügt.
+     * @param array
+     * @param length
+     */
     public void mergeSort(int[] array, int length) {
 
 
@@ -55,9 +63,15 @@ public class MergeSort extends SortAttributes {
         merge(array, leftArray, rightArray, middle, length - middle);
     }
 
+    /**
+     * Dieses Methode verbindet die zwei kleineren Array und fügt diese Zusammen und speichert dies im grösseren Array.
+     * @param array Das ist das grössere Array, worin die zwei kleineren Array zusammen gefügt werden
+     * @param leftArray Das ist das linke kleinere Array, wo nacher zum Teil des grösserens wird.
+     * @param rightArray Das ist das rechte kleinere Array, wo nacher zum Teil des grösserens wird.
+     * @param left Das ist die länge des linken Arrays.
+     * @param right Das ist die länge des rechten Arrays.
+     */
     public void merge(int[] array, int[] leftArray, int[] rightArray, int left, int right) {
-
-
         int i = 0, j = 0, k = 0;
         speicherbedarf += 5 * 32;
 

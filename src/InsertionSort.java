@@ -1,4 +1,9 @@
 /**
+ * Zu beginn hat man das unsortierte Array. In diesem Array hat man einen sortierten Berreich.
+ * Dieser Berreich ist zu beginn 0. Man fügt diesen Berreich den ersten Wert und stellt es in der richtigen Stelle.
+ * Dannach wird der Berreich grösser und fügt diesen einen weiteren Wert zu. Dieser Wert wird wieder an der
+ * richtigen Stelle eingefügt. Usw.
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
@@ -21,7 +26,9 @@ public class InsertionSort extends SortAttributes {
         speicherbedarf += array.length * 32;
     }
 
-
+    /**
+     * Das hier ist der ganze Algorithmus
+     */
     public void insertionSort() {
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
