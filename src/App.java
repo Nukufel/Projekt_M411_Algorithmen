@@ -109,6 +109,7 @@ public class App {
         File endFile = new File("endFile");
         String intoCSV = "";
 
+/*
         for (int i = 0; i < 7; i++) {
             intoCSV += "\n" + sorts[i] + "\n";
             intoCSV += ",Schreibzugriffe,Vergleiche,Speicherbedarf,Time\n";
@@ -116,6 +117,29 @@ public class App {
                       intoCSV += arrayNames[n] + "," + sortedArrays.get((i * 9) + n)[1] + "," + sortedArrays.get((i * 9) + n)[2] + "," + sortedArrays.get((i * 9) + n)[3] + "," + sortedArrays.get((i * 9) + n)[4] + "\n";
             }
         }
+ */
+        for(int x = 1; x<=4; x++) {
+            switch (x) {
+                case 1 -> intoCSV += "\n"+"Schreibzugriffe";
+                case 2 -> intoCSV += "\n"+"Vergleiche";
+                case 3 -> intoCSV += "\n"+"Speicherbedarf";
+                case 4 -> intoCSV += "\n" + "Time";
+            }
+
+                for (int i = 0; i < 7; i++) {
+                intoCSV += "," + sorts[i];
+            }
+
+            for (int n = 0; n < 9; n++) {
+                intoCSV += "\n" + arrayNames[n];
+                for (int i = 0; i < 7; i++) {
+                    intoCSV += "," + sortedArrays.get((i * 9) + n)[x];
+                }
+            }
+            intoCSV += "\n";
+        }
+
+        intoCSV += "\n";
 
 
         writer = new FileWriter(endFile+".csv", false);
