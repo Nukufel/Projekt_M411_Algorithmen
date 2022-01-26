@@ -4,6 +4,12 @@
  * rechts gegangen. Sonst wir der Unteknoten links verwendet. Und das selbe immer weiter bis ein Knoten gefunden
  * wird wo noch keinen Wert besitzt.
  *
+ * Stabil: Ja
+ * Bestcase: O(n*log(n))
+ * Averagecase: O(n*log(n))
+ * Worstcase: O(n*log(n))
+ *
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
@@ -27,6 +33,11 @@ public class BinaryTreeSort extends SortAttributes{
         }
     }
 
+    /**
+     * Das Array wird Sortiert
+     * Diese Methode ruft das Algorithmus auf
+     * @param zahlen das Array das Sortiert werden sollte
+     */
     @Override
     public void sort(int[] zahlen) {
         resetAttributes();

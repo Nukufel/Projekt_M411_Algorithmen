@@ -1,12 +1,23 @@
 /**
- * Beim Merge Sort teilt man das Array in soviele Stellen auf wie möglich.
+ * Beim Merge Sort teilt man das Array Blöcke. Diese Blöcke werden so lange aufgeteilt, bis jedes Block 1 Wert gross ist.
  * Diese werden dann Stück für Stück wieder zusammen gefügt. Beim zusammenfügen werden die einzelnen teile wieder sortiert.
+ *
+ * Stabil: Ja
+ * Bestcase: O(n*log(n))
+ * Averagecase: O(n*log(n))
+ * Worstcase: O(n*log(n))
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
  */
 public class MergeSort extends SortAttributes {
 
+    /**
+     * Das Array wird Sortiert
+     * Diese Methode ruft das Algorithmus auf
+     * @param zahlen das Array das Sortiert werden sollte
+     */
     @Override
     public void sort(int[] zahlen) {
 
@@ -26,8 +37,8 @@ public class MergeSort extends SortAttributes {
     /**
      * Das ist der Algorithmus. Hier wird das Array in vielen kleineren Arrays gespeichert.
      * Zum schluss dieser Methode werden diese kleineren Arrays zusammengefügt.
-     * @param array
-     * @param length
+     * @param array Das ist der das, Array das in vielen kleinen Arrays aufgeiteilt wird.
+     * @param length Das ist die länge des Blockes.
      */
     public void mergeSort(int[] array, int length) {
 

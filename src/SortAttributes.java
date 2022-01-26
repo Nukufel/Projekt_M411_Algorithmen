@@ -6,15 +6,29 @@
  * @since 12.01.2022
  */
 public abstract class SortAttributes implements SorterInterface {
+    /**
+     * Das ist das Array, das sortiert wird
+     */
     protected int[] array;
+    /**
+     * Das ist der Speicherbedarf, wo der Algorithmus verbraucht hat.
+     */
     protected long speicherbedarf;
+    /**
+     * Das ist die Zeit, wo der Algorithmus gebraucht hat.
+     */
     protected long time;
+    /**
+     * Das ist die Anzahl Vergleichen, wo der Algorithmus genutzt hat.
+     */
     protected long anzVergleiche;
+    /**
+     * Das ist die Anzahl Schreibzugriffe, wo der Algorithmus genutzt hat.
+     */
     protected long anzahlSchreibzugriffe;
 
     /**
      * Das sortierte Array wird zurück gegeben.
-     *
      * @return das Array das sortiert worden ist
      */
     @Override
@@ -24,7 +38,6 @@ public abstract class SortAttributes implements SorterInterface {
 
     /**
      * Der gebrauchten Speicherbedarf wird zurück gegeben.
-     *
      * @return den gebrauchten Speicherbedarf zum sortieren
      */
     @Override
@@ -34,7 +47,6 @@ public abstract class SortAttributes implements SorterInterface {
 
     /**
      * Die gebrauchte Zeit wird zurück gegeben
-     *
      * @return die gebrauchte Zeit zum sortieren
      */
     @Override
@@ -44,7 +56,6 @@ public abstract class SortAttributes implements SorterInterface {
 
     /**
      * Die Anzahl vergleiche werden zurück gegeben
-     *
      * @return die Anzahl von Vergleiche zum sortieren
      */
     @Override
@@ -54,7 +65,6 @@ public abstract class SortAttributes implements SorterInterface {
 
     /**
      * Die Anzahl von Schreibzugriffen werden zurück gegeben
-     *
      * @return die Anzahl von Schreibzugriffen zum sortieren
      */
     @Override
@@ -63,7 +73,7 @@ public abstract class SortAttributes implements SorterInterface {
     }
 
     /**
-     * setz alle Werte eines SortAttributes Objekts zurück bevor dem Starten der Sortierung
+     * setz alle Werte eines SortAttributes Objekts zurück.
      */
     protected void resetAttributes() {
         array = null;

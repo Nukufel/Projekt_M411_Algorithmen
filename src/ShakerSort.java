@@ -1,10 +1,24 @@
 /**
+ * Dieser Algorithmus vergleicht zwei Werte des Arrays, die neben einander sind. Falls der rechte Wert grösser
+ * ist als der linke werden diese vertauscht. Nacher geht es eine stelle weiter nach vorne. Wenn es einmal durch das
+ * ganze Array geht wird das selbe rückwerts gemacht. Dies wird solange gemacht bis das Array sortiert ist.
+ *
+ * Stabil: Ja
+ * Bestcase: O(n)
+ * Averagecase: O(n^2))
+ * Worstcase: O(n^2)
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
  */
 public class ShakerSort extends SortAttributes {
 
+    /**
+     * Das Array wird Sortiert
+     * Diese Methode ruft das Algorithmus auf
+     * @param zahlen das Array das Sortiert werden sollte
+     */
     @Override
     public void sort(int[] zahlen) {
         resetAttributes();
@@ -21,9 +35,8 @@ public class ShakerSort extends SortAttributes {
     }
 
     /**
-     * protected int anzahlSchreibzugriffe;
+     * Das ist der Algorithmus.
      */
-
     private void shakerSort() {
         boolean sorted = false;
         speicherbedarf += 2;
@@ -54,6 +67,11 @@ public class ShakerSort extends SortAttributes {
         anzVergleiche++;
     }
 
+    /**
+     * Tauscht die Werte des Arrays an diesen stellen.
+     * @param index1 Der Wert an dieser Stelle des Arrays wird mit Index 2 verschoben
+     * @param index2 Der Wert an dieser Stelle des Arrays wird mit Index 1 verschoben
+     */
     private void changePos(int index1, int index2) {
         int num = array[index1];
         array[index1] = array[index2];

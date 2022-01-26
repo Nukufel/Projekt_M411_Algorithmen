@@ -4,12 +4,22 @@
  * die Regek der Datenstruktur, die nur zum leicht verändert worden ist, wieder hergestellt. Dieser vorgang wird
  * immer wieder holt bis alle Werte des Arrays ausgefüllt werden.
  *
+ * Stabil: Nein
+ * Bestcase: O(n*log(n))
+ * Averagecase: O(n*log(n))
+ * Worstcase: O(n*log(n))
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
  */
 public class HeapSort extends SortAttributes {
 
+    /**
+     * Das Array wird Sortiert
+     * Diese Methode ruft das Algorithmus auf
+     * @param zahlen das Array das Sortiert werden sollte
+     */
     @Override
     public void sort(int[] zahlen) {
         resetAttributes();

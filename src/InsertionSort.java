@@ -4,12 +4,22 @@
  * Dannach wird der Berreich grösser und fügt diesen einen weiteren Wert zu. Dieser Wert wird wieder an der
  * richtigen Stelle eingefügt. Usw.
  *
+ * Stabil: Ja
+ * Bestcase: O(n)
+ * Averagecase: O(n^2)
+ * Worstcase: O(n^2)
+ *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022
  */
 public class InsertionSort extends SortAttributes {
 
+    /**
+     * Das Array wird Sortiert
+     * Diese Methode ruft das Algorithmus auf
+     * @param zahlen das Array das Sortiert werden sollte
+     */
     @Override
     public void sort(int[] zahlen) {
         resetAttributes();
