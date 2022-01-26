@@ -16,7 +16,7 @@ public class ShakerSort extends SortAttributes {
 
         long end = System.currentTimeMillis();
 
-        time = start - end;
+        time = end - start;
         speicherbedarf = (array.length + 3) * 32;
     }
 
