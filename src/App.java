@@ -106,7 +106,7 @@ public class App {
      */
     public void writeInToFile() throws IOException {
         FileWriter writer;
-        File endFile = new File("endFile.txt");
+        File endFile = new File("endFile");
         String intoCSV = "";
 
         for (int i = 0; i < 7; i++) {
@@ -118,7 +118,7 @@ public class App {
         }
 
 
-        writer = new FileWriter(endFile, false);
+        writer = new FileWriter(endFile+".csv", false);
         writer.write(intoCSV);
         writer.flush();
         writer.close();
