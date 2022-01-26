@@ -9,7 +9,6 @@
  * Averagecase: O(n*log(n))
  * Worstcase: O(n*log(n))
  *
- *
  * @author Vivek Viruthiyel
  * @version 1.0
  * @since 13.01.2022

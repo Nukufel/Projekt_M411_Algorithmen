@@ -39,7 +39,7 @@ public class InsertionSort extends SortAttributes {
     /**
      * Das hier ist der ganze Algorithmus
      */
-    public void insertionSort() {
+    private void insertionSort() {
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
             int counter = i - 1;

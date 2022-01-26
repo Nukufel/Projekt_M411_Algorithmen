@@ -40,7 +40,7 @@ public class MergeSort extends SortAttributes {
      * @param array Das ist der das, Array das in vielen kleinen Arrays aufgeiteilt wird.
      * @param length Das ist die länge des Blockes.
      */
-    public void mergeSort(int[] array, int length) {
+    private void mergeSort(int[] array, int length) {
 
 
         if (length < 2) {
@@ -82,7 +82,7 @@ public class MergeSort extends SortAttributes {
      * @param left Das ist die länge des linken Arrays.
      * @param right Das ist die länge des rechten Arrays.
      */
-    public void merge(int[] array, int[] leftArray, int[] rightArray, int left, int right) {
+    private void merge(int[] array, int[] leftArray, int[] rightArray, int left, int right) {
         int i = 0, j = 0, k = 0;
         speicherbedarf += 5 * 32;
 

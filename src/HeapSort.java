@@ -39,7 +39,7 @@ public class HeapSort extends SortAttributes {
      * Hier werden alle Teilprogramme des Algorithmus ausgeführt.
      */
     private void heapSort() {
-        BuildMaxHeap();
+        buildMaxHeap();
         // Sortierung:
         for (int i = array.length - 1; i > 0; i--) {
             changePos(i, 0);
@@ -54,7 +54,7 @@ public class HeapSort extends SortAttributes {
      * Hier werden alle Werte des Arrays in die Datenstruktur hinzugefügt und so sortiert, das die Regel
      * eingehalten werden.
      */
-    private void BuildMaxHeap() {
+    private void buildMaxHeap() {
         for (int i = (array.length / 2) - 1; i >= 0; i--) {
             versickern(i, array.length);
             anzVergleiche++;
